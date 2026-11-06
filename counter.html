@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <section>
+        <h2>Click Counter</h2>
+        <p id="count">0</p>
+        <button id="btn">Click Me</button>
+        <button id="reset-btn">Reset</button>
+    </section>
+
+
+    <script>
+        let count = 0;
+        console.log("The count is", count);
+
+        const button = document.getElementById("btn");
+        const display = document.getElementById("count");
+        const resetButton = document.getElementById("reset-btn");
+
+        console.log(button, display);
+
+        // When the button is clicked, run the code inside { }
+        button.addEventListener("click", function () {
+            count = count + 1;
+            display.textContent = count;
+            console.log("Clicked! Count is now", count);
+        });
+
+        // When the Reset button is clicked, set the count back to 0
+        resetButton.addEventListener("click", function () {
+            count = 0;
+            display.textContent = count;
+            console.log("Reset! Count is now", count);
+        });
+    </script>
+
+</body>
+
+</html>

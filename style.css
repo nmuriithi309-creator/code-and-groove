@@ -1,0 +1,109 @@
+/* style.css controls how the page LOOKS */
+
+/* The whole page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f1ec;
+  color: #333;
+  max-width: 700px;      /* keeps the text from stretching too wide */
+  margin: 0 auto;        /* centers the page */
+  padding: 20px;
+}
+
+/* The top area with your photo and name */
+header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+header img {
+  border-radius: 50%;    /* turns the square photo into a circle */
+  border: 4px solid white;
+  object-fit: cover;     /* fills the circle without squishing the photo */
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.tagline {
+  color: #777;
+}
+
+/* Each content block */
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;   /* rounded corners */
+}
+
+h2 {
+  color:#c0582f;
+}
+
+a {
+  color: #c0582f;
+}
+
+footer {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* The Like section */
+.likes {
+  text-align: center;
+}
+
+button {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;       /* shows a hand when you hover */
+}
+
+button:hover {
+  opacity: 0.8;          /* fades slightly when you hover */
+}
+
+/* ---- Dark mode ----
+   These rules only apply when the <body> has class="dark".
+   JavaScript adds or removes that class when the button is clicked. */
+body.dark {
+  background-color: #2d1b2e;   /* deep plum */
+  color: #f3e8f1;              /* soft off-white text */
+}
+
+body.dark section {
+  background-color: #432a45;   /* lighter plum boxes */
+}
+
+body.dark h2,
+body.dark a {
+  color: #f4a6c8;              /* soft pink headings and links */
+}
+
+body.dark button {
+  background-color: #d96ba0;   /* rose pink buttons */
+}
+
+body.dark .tagline,
+body.dark footer {
+  color: #c7aac4;              /* muted lilac */
+}
+
+body.dark header img {
+  border-color: #f4a6c8;       /* pink ring around your photo */
+}
+
+/* Keeps the dark mode button in the top corner */
+#theme-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}

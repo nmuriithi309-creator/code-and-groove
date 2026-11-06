@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- The head holds info ABOUT the page (not shown on screen) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naomi Muriithi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <button id="theme-btn">🌙 Dark mode</button>
+
+  <header>
+    <img src="me.jpg" alt="A photo of me" width="150" height="150">
+    <h1>Hi, I'm Naomi Muriithi</h1>
+    <p class="tagline">Beginner web developer · Curious learner</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        Hi, I'm Naomi! I'm a creative soul who believes every big dream starts with a small step, and this website is
+        mine. I love music, good conversations and learning how things work. I'm teaching myself to code one line at a
+        time, and I can't wait to see what I build next.
+      </p>
+    </section>
+
+    <section>
+      <h2>Things I Love</h2>
+      <ul>
+        <li>Music and discovering new artists</li>
+        <li>Dancing</li>
+        <li>Learning to code</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Find Me Online</h2>
+      <p>
+        <a href="https://github.com/nmuriithi309-creator" target="_blank">GitHub</a>
+      </p>
+    </section>
+
+    <section class="likes">
+      <h2>Like My Page?</h2>
+      <button id="like-btn">❤️ Like</button>
+      <p><span id="like-count">0</span> likes</p>
+    </section>
+
+    <section class="likes">
+      <h2>Fun Fact About Me</h2>
+      <p id="fact">Click the button to learn something about me!</p>
+      <button id="fact-btn">🎲 Show me a fact</button>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>Made by me while learning to code</p>
+  </footer>
+
+  <script>
+    // Same pattern as the counter!
+    let likes = 0;
+
+    const likeButton = document.getElementById("like-btn");
+    const likeDisplay = document.getElementById("like-count");
+
+    likeButton.addEventListener("click", function () {
+      likes = likes + 1;
+      likeDisplay.textContent = likes;
+    });
+
+    // ---- Fun fact button ----
+
+    const facts = [
+      "I can't go a day without listening to music 🎶",
+      "Put on a good song and I WILL start dancing 💃🏾",
+      "This website is the first thing I ever coded 💻",
+      "I believe every big dream starts with a small step ✨",
+      "I love a good conversation more than almost anything ☕"
+    ];
+
+    const factButton = document.getElementById("fact-btn");
+    const factDisplay = document.getElementById("fact");
+
+    factButton.addEventListener("click", function () {
+      // Pick a random position in the list (0, 1, 2, 3 or 4)
+      const randomIndex = Math.floor(Math.random() * facts.length);
+
+      // Show the fact at that position
+      factDisplay.textContent = facts[randomIndex];
+    });
+
+    // ---- Dark mode button ----
+    const themeButton = document.getElementById("theme-btn");
+
+    themeButton.addEventListener("click", function () {
+      // toggle = add the "dark" class if it's missing, remove it if it's there
+      document.body.classList.toggle("dark");
+
+      // Change the button text to match
+      if (document.body.classList.contains("dark")) {
+        themeButton.textContent = "☀️ Light mode";
+      } else {
+        themeButton.textContent = "🌙 Dark mode";
+      }
+    });
+  </script>
+
+</body>
+
+</html>
